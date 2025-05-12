@@ -1,4 +1,4 @@
-# XSS
+# Reflected XSS
 
 ![Screenshot 2025-05-09 012554](https://github.com/user-attachments/assets/a9bf5e3b-80e3-4c0c-9469-858fe8a31364)
 
@@ -9,6 +9,10 @@
 ![Screenshot 2025-05-09 013237](https://github.com/user-attachments/assets/b7cf1b2b-1be1-42be-a64b-8dd5a693aee3)
 
 ![image](https://github.com/user-attachments/assets/3cf85edc-c839-4f7d-a543-c4cfa3fcd176)
+
+# Stored XSS cũng giống 
+
+Xuất hiện mỗi lần bạn mở lại trang (mà bạn không cần gửi lại dữ liệu từ input hay URL) 
 
 # DOM XSS
 
