@@ -90,9 +90,12 @@ Ta được thông tin của nạn nhân, Ví dụ nếu trang web hackthebox.co
 
 ![Screenshot 2025-05-13 203809](https://github.com/user-attachments/assets/5611bda4-23de-4285-be14-6db5ea04aaf4)
 
-Ta nên bật trình lắng nghe trên VM bằng netcat hawojc bằng php
+Ta nên bật trình lắng nghe trên VM bằng netcat hoac bằng php
 
-![Screenshot 2025-05-13 204029](https://github.com/user-attachments/assets/d970a3bb-5a79-4ede-9b27-cb6fc348f9a7)
+Thêm vào 1 dòng nano index.php và đổ đoạn code bên trên vào trước khi khởi động trình lắng nghe
+
+![Screenshot 2025-05-13 204601](https://github.com/user-attachments/assets/ceb8229f-e22a-4f9b-974d-bf9f29e679cb)
+
 
 Khi nạn nhân đăng nhập vào ta sẽ nhận được cookie của người đó
 
