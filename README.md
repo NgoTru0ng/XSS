@@ -101,6 +101,71 @@ Khi nạn nhân đăng nhập vào ta sẽ nhận được cookie của người
 
 ![Screenshot 2025-05-13 204128](https://github.com/user-attachments/assets/06963a52-089a-49be-9948-21e5fb761bac)
 
+# File Upload
+
+![Screenshot 2025-05-15 151930](https://github.com/user-attachments/assets/d8bb7d85-43b5-460d-87cb-a9f071d52047)
+
+- Sau khi tôi gửi 1 ảnh con mèo nó hiện lên trang web của tôi, tôi nghĩ server sử dụng 1 thư viện nào đó để xử lý dữ liệu vào tạo hình ảnh hiển thị ra cho tôi
+
+![Screenshot 2025-05-15 151714](https://github.com/user-attachments/assets/88d7074c-c93a-4261-ba5f-14b43a21575b)
+
+- Ta thấy ta chỉ được gửi ảnh với phần extension là .jpg .jpef .png
+
+- Ý tưởng là tôi tạo 1 file ảnh đọc hại .jpg nhưng thực chất nội dung là 1 file SVG dạng XML, server có thể xử lý và hiện thị ra nội dung
+
+![Screenshot 2025-05-15 152130](https://github.com/user-attachments/assets/cb05fe81-3861-44af-baa5-9ed4e773eceb)
+
+![Screenshot 2025-05-15 152928](https://github.com/user-attachments/assets/4ac59f2a-9da4-4c0d-a616-bc01b79091ea)
+
+![Screenshot 2025-05-15 153006](https://github.com/user-attachments/assets/a997830b-2baa-417a-831f-aa091e02c13c)
+
+- Sau khi giải mã tôi nhận thấy sau khi file để gửi lên sẽ được lưu trữ tại ```/user_feedback_submissions/``` đây là thứ tôi cần :))
+- Phân tích src tôi thấy sau khi file gửi lên sẽ được lưu vào tệp lưu trữ với 1 tên mới
+
+![Screenshot 2025-05-15 153515](https://github.com/user-attachments/assets/6a64b4b4-61f3-4b93-86ca-13a36b02b991)
+
+- Hàm date('ymd') tạo ra ngày tháng năm hiện tại theo định dạng năm-tháng-ngày
+
+![Screenshot 2025-05-15 154027](https://github.com/user-attachments/assets/e268744d-7d99-4c83-8f05-25b8d9dbcd14)
+
+- Tên file mới sẽ có dạng 250515_shellllll.jpg
+
+- Bây giờ ta đã có file lưu trữ, vậy làm sao ta có thể thực thi lệnh từ xa để lấy flag tại thư mục /
+- Tôi tiếp tục thêm đoạn mã sau vào file shellllll.jpg của tôi
+![Screenshot 2025-05-15 155218](https://github.com/user-attachments/assets/ca556fcc-acfe-4281-98aa-d53a46bf4326)
+-Tôi vào đường dẫn lưu trữ file và thấy payload của tôi nhưng nó khong được thực thi
+![Screenshot 2025-05-15 155305](https://github.com/user-attachments/assets/8a123717-75a9-4428-a177-cffd4266bd94)
+
+- Vậy để thực thi được tôi cần phải thay đổi extension của tôi thành .php nhưng vẫn đảm bảo extension cuối vẫn là .jpg
+- Nhưng
+  
+![Screenshot 2025-05-15 155643](https://github.com/user-attachments/assets/63472db5-d6c1-40c6-9c74-baa723a87429)
+
+- Lí do là tôi đã bị chặn các đuôi .php .phps .phtml
+
+![Screenshot 2025-05-15 155742](https://github.com/user-attachments/assets/a7e4b08a-1178-4f7f-a366-e678038f1796)
+
+- Giải pháp là tôi đã thay thành .phar.jpg
+  
+- https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/web-extensions.txt
+
+- Và khi tôi vào đường dẫn của file lưu trữ tôi thấy payload của tôi đã được thực thi
+
+![Screenshot 2025-05-15 155927](https://github.com/user-attachments/assets/7033912a-0e09-48ee-8cd9-5a39f3e359e7)
+
+- Tuyết vời , bây giờ tôi chỉ cần chèn vào 1 payload đơn giản có thể RCE
+
+- ```<?php system($_GET["cmd"]); ?>```
+  
+![Screenshot 2025-05-15 160542](https://github.com/user-attachments/assets/47697880-9848-453b-8022-d0be3e7e0c0c)
+
+
+
+
+
+
+
+
 
 
 
